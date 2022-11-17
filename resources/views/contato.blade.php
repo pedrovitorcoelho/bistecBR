@@ -7,8 +7,15 @@
 @section('corpo')
 <!-- CORPO -->
 <article id="first_section" class="article_contact">
+ 
+    @if(session('mensagem'))      
+       <div class="alert alert-success">
+         <p>{{session('mensagem')}}</p>  
+       </div> 
+    @endif
         <div class="formulario2">
         
+            <form name="frmContato" id="frmContato" method="POST" action="{{url('enviaContato')}}">
                 <div class="campos">
                 
                     <h1>Formulário para Contato</h1>
